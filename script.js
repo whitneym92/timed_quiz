@@ -4,24 +4,6 @@ const questionContainerElement = document.getElementById("question-container");
 const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answer-buttons");
 
-
-const startMinutes = 2;
-let time = startMinutes * 60;
-const countdownEl = document.getElementById("countdown");
-
-setInterval(updateCountdown, 1000);
-
-function updateCountdown() {
-    const minutes = Math.floor(time/60);
-    let seconds = time % 60;
-
-    seconds = seconds < 10 ? '0' + seconds : seconds;
-
-    countdownEl.innerHTML = `${minutes}:${seconds}`;
-    time--;
-}
-
-
 let shuffledQuestions, currentQuestionIndex;
 
 startButton.addEventListener("click", startQuiz);
@@ -31,6 +13,9 @@ nextButton.addEventListener("click",  () => {
 })
 
 
+const timeleft = 1;
+let time= timeleft * 60;
+const countdownEl = document.getElementById("countdown");
 
 function startQuiz(){
     startButton.classList.add("hide")
@@ -39,7 +24,24 @@ function startQuiz(){
     questionContainerElement.classList.remove("hide")
     setNextQuestion()
 
+    const timer = setInterval(function() {
+        const minutes = Math.floor(time/60);
+        let seconds = time % 60;
+        seconds= seconds <10 ? `0` + seconds : seconds;
+     
+      if(time <= 0){
+        clearInterval(timer);
+        countdownEl.innerHTML = "You're out of time!";
+      } else {
+        countdownEl.innerHTML = `${minutes}:${seconds}`;
+      }
+      time -= 1;
+     }, 1000);
+
 };
+
+
+
 
 
 
