@@ -1,6 +1,7 @@
 *, *::before, *::after {
     box-sizing: border-box; 
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: teal;
 }
 /* body {
     padding: 0;
@@ -43,3 +44,9 @@
 .hide {
     display: none;
 }
+
+.btn {
+    padding: 10px;
+    margin: 10px 10px;
+}
+

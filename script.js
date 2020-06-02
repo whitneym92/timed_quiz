@@ -4,6 +4,24 @@ const questionContainerElement = document.getElementById("question-container");
 const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answer-buttons");
 
+
+const startMinutes = 2;
+let time = startMinutes * 60;
+const countdownEl = document.getElementById("countdown");
+
+setInterval(updateCountdown, 1000);
+
+function updateCountdown() {
+    const minutes = Math.floor(time/60);
+    let seconds = time % 60;
+
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    countdownEl.innerHTML = `${minutes}:${seconds}`;
+    time--;
+}
+
+
 let shuffledQuestions, currentQuestionIndex;
 
 startButton.addEventListener("click", startQuiz);
@@ -11,6 +29,8 @@ nextButton.addEventListener("click",  () => {
     currentQuestionIndex++
     setNextQuestion()
 })
+
+
 
 function startQuiz(){
     startButton.classList.add("hide")
@@ -20,6 +40,8 @@ function startQuiz(){
     setNextQuestion()
 
 };
+
+
 
 function setNextQuestion() {
     resetState()
