@@ -2,7 +2,7 @@
     box-sizing: border-box; 
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-body {
+/* body {
     padding: 0;
     margin:0;
     display: flex;
@@ -10,14 +10,16 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
-}
+} */
 
 .container {
+    margin-top: 250px;
     width: 800px;
     max-width: 80%;
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0 0 10px 2px;
+
 }
 
 .btn-grid {
@@ -27,11 +29,6 @@ body {
     margin: 20px 0;
 }
 
-.btn {
-    border: 1px solid;
-    border-radius: 5px;
-    padding: 5px 10px;
-}
 .start-btn, .next-btn {
     font-size: 1.5rem;
     font-weight: bold;
