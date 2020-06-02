@@ -40,11 +40,6 @@ function startQuiz(){
 
 };
 
-
-
-
-
-
 function setNextQuestion() {
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
