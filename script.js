@@ -108,46 +108,46 @@ const questions = [
     {
         question: "Javascript, along with what, make up the fundamental programming languages?",
         answers: [
-            { text: "HTML", correct: false},
-            { text: "CSS", correct: false},
-            { text: "None of the above", correct: false},
-            { text: "All of the above", correct: true},
+            { text: "A) HTML", correct: false},
+            { text: "B) CSS", correct: false},
+            { text: "C) None of the above", correct: false},
+            { text: "D) All of the above", correct: true},
         ]
     },
     {
         question: "What are examples of basic data-types?",
         answers: [
-            {text: "HTML, CSS and Javascript", correct: false},
-            {text: "Alerts, prompts and confirms", correct: false},
-            {text: "Numbers, strings and booleans", correct: true},
-            {text: "All of the above", correct: false},
+            {text: "A) HTML, CSS and Javascript", correct: false},
+            {text: "B) Alerts, prompts and confirms", correct: false},
+            {text: "C) Numbers, strings and booleans", correct: true},
+            {text: "D) All of the above", correct: false},
         ]
     },
     {
         question: "What are the components of a function?",
         answers: [
-            {text: "Function definition", correct: false},
-            {text: "Function execution", correct: false},
-            {text: "Parenthesis()", correct: false},
-            {text: "All the above", correct: true},
+            {text: "A) Function definition", correct: false},
+            {text: "B) Function execution", correct: false},
+            {text: "C) Parenthesis()", correct: false},
+            {text: "D) All the above", correct: true},
         ]
     },
     {
         question: "What do objects contain?",
         answers: [
-            {text: "Properties", correct: false},
-            {text: "Values", correct: false},
-            {text: "All of the above", correct: true},
-            {text: "None of the above", correct: false},
+            {text: "A) Properties", correct: false},
+            {text: "B) Values", correct: false},
+            {text: "C) All of the above", correct: true},
+            {text: "D) None of the above", correct: false},
         ]
     },
     {
         question: "The only eventListener is the 'click' event?",
         answers: [
-            {text: "True", correct: false},
-            {text: "False", correct: true},
-            {text: "What are those?", correct: false},
-            {text: "I'm done with JS", correct: false},
+            {text: "A) True", correct: false},
+            {text: "B) False", correct: true},
+            {text: "C) What are those?", correct: false},
+            {text: "D) I'm done with JS", correct: false},
         ]
     }
 ];
