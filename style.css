@@ -27,12 +27,11 @@ body {
     margin: 20px 0;
 }
 
-/* .btn {
+.btn {
     border: 1px solid;
     border-radius: 5px;
     padding: 5px 10px;
-    outline: none;
-} */
+}
 .start-btn, .next-btn {
     font-size: 1.5rem;
     font-weight: bold;
