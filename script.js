@@ -17,3 +17,15 @@ function setNextQuestion() {
 function selectAnswer() {
 
 }
+
+var questions = [
+    {
+        question: "Javascript, along with what, are of the fundamental programming languages?"
+        answers: [
+            { text: "HTML", correct: false},
+            { text: "CSS", correct: false},
+            { text: "None of the above", correct: false},
+            { text: "All of the above", correct: true}
+        ]
+    }
+]
