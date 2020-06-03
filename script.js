@@ -1,3 +1,4 @@
+/*Sat my vars by grabbing elements*/
 var startButton = document.getElementById("start-btn");
 var nextButton = document.getElementById("next-btn");
 var questionContainerEl = document.getElementById("question-container");
@@ -6,24 +7,26 @@ var answerButtonsEl = document.getElementById("answer-buttons");
 
 let randomQuestion, currentQuestionIndex;
 
+/*Add eventListeners for my clicks*/
 startButton.addEventListener("click", startQuiz);
 nextButton.addEventListener("click",  () => {
     currentQuestionIndex++;
     setNextQuestion();
 });
 
-
+/*Time interval var*/
 var timeleft = 1;
 let time= timeleft * 60;
 var countdownEl = document.getElementById("countdown");
 
+/*function to start quiz, with question changing each restart*/
 function startQuiz(){
     startButton.classList.add("hide");
     randomQuestion = questions.sort(() => Math.random() - .5);
     currentQuestionIndex = 0;
     questionContainerEl.classList.remove("hide");
     setNextQuestion();
-
+/*interval function*/
     var timer = setInterval(function() {
         var minutes = Math.floor(time/60);
         let seconds = time % 60;
@@ -39,13 +42,13 @@ function startQuiz(){
      }, 1000);
 
 }
-
+/*function for question popping up when next is clicked*/
 function setNextQuestion() {
     resetState();
     showQuestion(randomQuestion[currentQuestionIndex]);
 
 }
-
+/*function for question showing with answers*/
 function showQuestion(question) {
     questionElement.innerText = question.question;
     question.answers.forEach(answer => {
@@ -100,7 +103,7 @@ function clearStatusClass(element) {
     element.classList.remove("correct");
     element.classList.remove("wrong");
 }
-
+/*question array*/
 var questions = [
     {
         question: "Javascript, along with what, make up the fundamental programming languages?",
