@@ -1,10 +1,10 @@
 var startButton = document.getElementById("start-btn");
 var nextButton = document.getElementById("next-btn");
-var questionContainerElement = document.getElementById("question-container");
+var questionContainerEl = document.getElementById("question-container");
 var questionElement = document.getElementById("question");
-var answerButtonsElement = document.getElementById("answer-buttons");
+var answerButtonsEl = document.getElementById("answer-buttons");
 
-let shuffledQuestions, currentQuestionIndex;
+let randomQuestion, currentQuestionIndex;
 
 startButton.addEventListener("click", startQuiz);
 nextButton.addEventListener("click",  () => {
@@ -19,9 +19,9 @@ var countdownEl = document.getElementById("countdown");
 
 function startQuiz(){
     startButton.classList.add("hide");
-    shuffledQuestions = questions.sort(() => Math.random() - .5);
+    randomQuestion = questions.sort(() => Math.random() - .5);
     currentQuestionIndex = 0;
-    questionContainerElement.classList.remove("hide");
+    questionContainerEl.classList.remove("hide");
     setNextQuestion();
 
     var timer = setInterval(function() {
@@ -42,7 +42,7 @@ function startQuiz(){
 
 function setNextQuestion() {
     resetState();
-    showQuestion(shuffledQuestions[currentQuestionIndex]);
+    showQuestion(randomQuestion[currentQuestionIndex]);
 
 }
 
@@ -56,7 +56,7 @@ function showQuestion(question) {
             button.dataset.correct = answer.correct;
         }
         button.addEventListener("click", selectAnswer);
-        answerButtonsElement.appendChild(button);
+        answerButtonsEl.appendChild(button);
     });
 
 
@@ -64,9 +64,9 @@ function showQuestion(question) {
 
 function resetState() {
     nextButton.classList.add("hide");
-    while (answerButtonsElement.firstChild) {
-        answerButtonsElement.removeChild
-        (answerButtonsElement.firstChild);
+    while (answerButtonsEl.firstChild) {
+        answerButtonsEl.removeChild
+        (answerButtonsEl.firstChild);
     }
 }
 
@@ -74,11 +74,11 @@ function resetState() {
 function selectAnswer(e) {
     var selectedButton = e.target;
     var correct = selectedButton.dataset.correct;
-    setStatusClass(document.body, correct);
-    Array.from(answerButtonsElement.children).forEach(button => {
+    setStatusClass(document.body, correct)
+    Array.from(answerButtonsEl.children).forEach(button => {
         setStatusClass(button, button.dataset.correct);
     });
-    if (shuffledQuestions.length > currentQuestionIndex + 1) {
+    if (randomQuestion.length > currentQuestionIndex + 1) {
     nextButton.classList.remove("hide");
     } else {
         startButton.innerText = "Restart";

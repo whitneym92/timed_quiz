@@ -1,17 +1,8 @@
- *, *::before, *::after {
+ *{
     box-sizing: border-box; 
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: teal;
 }
-/* body {
-    padding: 0;
-    margin:0;
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-} */
 
 .container {
     margin-top: 250px;
@@ -39,7 +30,7 @@
     padding: 10px 20px;
 }
 
-.controls {
+.commandButton {
     display: flex;
     justify-content: center;
     align-items: center;
